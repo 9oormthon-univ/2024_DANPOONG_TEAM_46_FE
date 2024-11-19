@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'book7';
+  src: url("fonts/book7.eot?26jco0");
+  src: url("fonts/book7.eot?26jco0#iefix") format("embedded-opentype"), url("fonts/book7.ttf?26jco0") format("truetype"), url("fonts/book7.woff?26jco0") format("woff"), url("fonts/book7.svg?26jco0#book7") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -17,7 +24,7 @@ i {
   align-items: center;
   width: 46px;
   height: 22px;
-  border-radius: 4px;
+  border-radius: 5px;
   margin: 4px 7px;
   font-family: "Pretendard", sans-serif;
   font-weight: 700;
