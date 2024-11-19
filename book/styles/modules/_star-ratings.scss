@@ -1,0 +1,11 @@
+%star-rating-base {
+  @include flexbox(start);
+
+  .ic-star-score {
+    color: #575757;
+
+    &.is-active {
+      color: $primary;
+    }
+  }
+}
