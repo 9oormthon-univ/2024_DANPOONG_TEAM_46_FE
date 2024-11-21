@@ -4,7 +4,7 @@ import '../style.css'
 
 const StarPage = () => {
   return (
-    <div className="page-container">
+    <div className="main-page">
       <h1>별자리</h1>
       <p>이곳은 별자리 페이지입니다.</p>
       <NavigationBar /> {/* 네비게이션 바 포함 */}

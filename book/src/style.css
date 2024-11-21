@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'book7';
   src: url("./assets/fonts/book7.eot?");
@@ -116,20 +117,45 @@ i {
       font-size: 12px;
       color: inherit; }
 
-.page-container {
-  padding-bottom: 63px; }
+body, html {
+  margin: 0;
+  /* 기본 여백 제거 */
+  padding: 0;
+  /* 기본 여백 제거 */
+  width: 100%;
+  /* 화면 전체 너비 */
+  height: 100%;
+  /* 화면 전체 높이 */ }
 
-.main-content {
-  padding: 16px; }
-
-.main-page header {
+.main-page {
+  padding-bottom: 63px;
+  background-image: url("../public/img/im-BG.png");
+  /* public 폴더 절대 경로 */
+  background-size: cover;
+  /* 화면을 꽉 채우도록 설정 */
+  background-repeat: no-repeat;
+  /* 이미지 반복 방지 */
+  background-position: center;
+  /* 중앙 정렬 */
+  background-position: top;
+  /* 이미지를 위쪽에서 시작하도록 설정 */
+  height: calc(100vh - 63px);
+  /* 네비게이션 바 높이만큼 제외한 높이 */
+  width: 100%;
+  /* 화면 전체 너비 */
+  display: flex;
+  /* 배치를 위한 flexbox */
+  flex-direction: column;
+  /* 수직 정렬 */
+  align-items: center;
+  /* 수평 가운데 정렬 */
+  justify-content: center;
+  /* 수직 가운데 정렬 */
+  color: #ffffff;
+  /* 기본 텍스트 색상 흰색 */
+  font-family: "Pretendard", sans-serif;
+  /* 기본 폰트 */
   text-align: center;
-  margin-bottom: 16px; }
-  .main-page header h1 {
-    font-size: 20px;
-    color: #ffffff; }
-  .main-page header p {
-    font-size: 16px;
-    color: #67707b; }
+  /* 텍스트 가운데 정렬 */ }
 
 /*# sourceMappingURL=style.css.map */
