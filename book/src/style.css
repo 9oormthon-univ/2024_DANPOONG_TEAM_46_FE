@@ -1,10 +1,14 @@
 @font-face {
   font-family: 'book7';
-  src: url("./assets/fonts/book7.eot?");
-  src: url("./assets/fonts/book7.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/book7.ttf?") format("truetype"), url("./assets/fonts/book7.woff?") format("woff"), url("./assets/fonts/book7.svg?#book7") format("svg");
+  src: url('./assets/fonts/book7.eot?');
+  src: url('./assets/fonts/book7.eot?#iefix') format('embedded-opentype'),
+    url('./assets/fonts/book7.ttf?') format('truetype'),
+    url('./assets/fonts/book7.woff?') format('woff'),
+    url('./assets/fonts/book7.svg?#book7') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: block; }
+  font-display: block;
+}
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -16,79 +20,98 @@ i {
   line-height: 1;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .ic-x:before {
   content: '\e905';
-  color: #000; }
+  color: #000;
+}
 
 .ic-search:before {
   content: '\e90a';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-plus:before {
   content: '\e90c';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-back:before {
   content: '\e900';
-  color: #000; }
+  color: #000;
+}
 
 .ic-camera:before {
   content: '\e901';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-door-open:before {
   content: '\e902';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-calender:before {
   content: '\e903';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-stop:before {
   content: '\e904';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-trash:before {
   content: '\e906';
-  color: #000; }
+  color: #000;
+}
 
 .ic-club:before {
   content: '\e907';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-check:before {
   content: '\e908';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-book:before {
   content: '\e909';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-filter:before {
   content: '\e90b';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-setting:before {
   content: '\e90d';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-book-open:before {
   content: '\e90e';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-V_icon:before {
   content: '\e90f';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-star:before {
   content: '\e910';
-  color: #fff; }
+  color: #fff;
+}
 
 .ic-star-score:before {
   content: '\e911';
-  color: #5f6ff7; }
+  color: #575757;
+}
 
 .tag-club {
   display: inline-flex;
@@ -98,11 +121,12 @@ i {
   height: 22px;
   border-radius: 4px;
   margin: 4px 7px;
-  font-family: "Pretendard", sans-serif;
+  font-family: 'Pretendard', sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 1.4;
   color: #ffffff;
-  background-color: #5465ff; }
+  background-color: #5465ff;
+}
 
 /*# sourceMappingURL=style.css.map */
