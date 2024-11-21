@@ -1,0 +1,87 @@
+/* 전체 화면 스타일 */
+.star-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* 상단 헤더 */
+.header {
+  margin: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* 프로필 사진과 텍스트 사이 간격 */
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.username {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #aaa;
+}
+
+/* 별자리 카드 그리드 */
+.star-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+  overflow-y: auto; /* 스크롤 추가 */
+  height: 60vh; /* 전체 화면에서 적절히 조정 */
+}
+
+.star-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.star-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.star-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.star-card.active {
+  opacity: 1;
+}
+
+.star-card.inactive {
+  opacity: 0.4;
+}
+
+/* 하단 안내 텍스트 */
+.footer {
+  margin: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
