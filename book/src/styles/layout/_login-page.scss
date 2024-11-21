@@ -2,7 +2,7 @@
 
 body,
 html {
-  margin: 0; /* 기본 여백 제거 */
+  margin: 0vh; /* 기본 여백 제거 */
   padding: 0; /* 기본 여백 제거 */
   width: 100%; /* 화면 전체 너비 */
   height: 100%; /* 화면 전체 높이 */
@@ -14,28 +14,29 @@ html {
   justify-content: space-between; /* 컨테이너 안 요소들을 위아래로 균등하게 배치 */
   height: 100vh;
   width: 100%;
-  background-image: url('/img/im-BG.png'); // 절대 경로로 수정
   background-size: cover;
   background-position: top;
   color: $white; // 기본 텍스트 색상: 흰색
   text-align: center;
   font-family: 'Pretendard', sans-serif;
-  padding: 5vh 0vh; /* 상하 여백 추가 */
+  padding: 0vh 0vh; /* 상하 여백 추가 */
 
   .login-logo {
     width: 200px; // 로고 크기
-    margin-bottom: -2vh;
+    margin-top: 30vh;
   }
 
   .login-subtitle {
     font-size: 16px;
     color: $t-3; // 회색 텍스트
+    margin-top: -2vh;
   }
 
   .kakao-login-button {
     width: 300px; // 이미지 크기 조정
     height: auto; // 비율 유지
     cursor: pointer; // 클릭 가능하게 설정
+    margin-top: 25vh; /* 로그인 버튼과 간격 설정 */
 
     &:hover {
       opacity: 0.9; // 호버 시 약간 투명도 적용
@@ -46,7 +47,7 @@ html {
     font-size: 14px;
     color: $t-3; // 회색
     text-decoration: none;
-    margin-top: 2vh; /* 로그인 버튼과 간격 설정 */
+    margin-bottom: 18vh; /* 로그인 버튼과 간격 설정 */
 
     &:hover {
       text-decoration: underline;

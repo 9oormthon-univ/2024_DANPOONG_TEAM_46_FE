@@ -1,11 +1,15 @@
-import React from 'react'
-import '../style.css' // 스타일 가져오기
+import React from "react";
+import "../style.css"; // 스타일 가져오기
+
 
 const LoginPage = () => {
+  const REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY; // .env에 저장된 키
+  const REDIRECT_URI = "http://localhost:8080/api/v1/oauth/kakao/callback"; // 백엔드 리디렉션 URI
+
   const handleKakaoLogin = () => {
-    console.log('카카오 로그인 버튼 클릭')
-    // 카카오 로그인 로직 추가
-  }
+    const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+    window.location.href = KAKAO_AUTH_URL; // 카카오 로그인 페이지로 리디렉션
+  };
 
   return (
     <div className="login-page">
@@ -25,7 +29,7 @@ const LoginPage = () => {
         이용약관 확인하기
       </a>
     </div>
-  )
-}
+  );
+};
 
-export default LoginPage
+export default LoginPage;
