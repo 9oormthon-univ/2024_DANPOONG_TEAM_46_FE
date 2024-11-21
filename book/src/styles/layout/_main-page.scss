@@ -1,0 +1,28 @@
+// 메인 페이지 스타일 (_main-page.scss)
+@import '../constants/colors';
+
+.page-container {
+  padding-bottom: 63px; // 네비게이션 바 높이만큼 여백 추가
+}
+
+.main-content {
+  // 메인 콘텐츠 스타일 (필요시 추가)
+  padding: 16px;
+}
+
+.main-page {
+  header {
+    text-align: center;
+    margin-bottom: 16px;
+
+    h1 {
+      font-size: 20px;
+      color: $white;
+    }
+
+    p {
+      font-size: 16px;
+      color: $t-4-dis;
+    }
+  }
+}

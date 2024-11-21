@@ -10,7 +10,7 @@
   margin: 4px 7px; // 위아래 4px, 양옆 7px
 
   // 폰트 스타일
-  @include text-style($font-bold, $font-size-12, $text-1);
+  @include text-style($font-bold, $font-size-12, $white);
 
   // 배경색: Primary color
   background-color: $primary;

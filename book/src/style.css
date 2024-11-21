@@ -1,14 +1,10 @@
 @font-face {
   font-family: 'book7';
-  src: url('./assets/fonts/book7.eot?');
-  src: url('./assets/fonts/book7.eot?#iefix') format('embedded-opentype'),
-    url('./assets/fonts/book7.ttf?') format('truetype'),
-    url('./assets/fonts/book7.woff?') format('woff'),
-    url('./assets/fonts/book7.svg?#book7') format('svg');
+  src: url("./assets/fonts/book7.eot?");
+  src: url("./assets/fonts/book7.eot?#iefix") format("embedded-opentype"), url("./assets/fonts/book7.ttf?") format("truetype"), url("./assets/fonts/book7.woff?") format("woff"), url("./assets/fonts/book7.svg?#book7") format("svg");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
-}
+  font-display: block; }
 
 i {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -20,98 +16,61 @@ i {
   line-height: 1;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  -moz-osx-font-smoothing: grayscale; }
 
 .ic-x:before {
-  content: '\e905';
-  color: #000;
-}
+  content: '\e905'; }
 
 .ic-search:before {
-  content: '\e90a';
-  color: #fff;
-}
+  content: '\e90a'; }
 
 .ic-plus:before {
-  content: '\e90c';
-  color: #fff;
-}
+  content: '\e90c'; }
 
 .ic-back:before {
-  content: '\e900';
-  color: #000;
-}
+  content: '\e900'; }
 
 .ic-camera:before {
-  content: '\e901';
-  color: #fff;
-}
+  content: '\e901'; }
 
 .ic-door-open:before {
-  content: '\e902';
-  color: #fff;
-}
+  content: '\e902'; }
 
 .ic-calender:before {
-  content: '\e903';
-  color: #fff;
-}
+  content: '\e903'; }
 
 .ic-stop:before {
-  content: '\e904';
-  color: #fff;
-}
+  content: '\e904'; }
 
 .ic-trash:before {
-  content: '\e906';
-  color: #000;
-}
+  content: '\e906'; }
 
 .ic-club:before {
-  content: '\e907';
-  color: #fff;
-}
+  content: '\e907'; }
 
 .ic-check:before {
-  content: '\e908';
-  color: #fff;
-}
+  content: '\e908'; }
 
 .ic-book:before {
-  content: '\e909';
-  color: #fff;
-}
+  content: '\e909'; }
 
 .ic-filter:before {
-  content: '\e90b';
-  color: #fff;
-}
+  content: '\e90b'; }
 
 .ic-setting:before {
-  content: '\e90d';
-  color: #fff;
-}
+  content: '\e90d'; }
 
 .ic-book-open:before {
-  content: '\e90e';
-  color: #fff;
-}
+  content: '\e90e'; }
 
 .ic-V_icon:before {
-  content: '\e90f';
-  color: #fff;
-}
+  content: '\e90f'; }
 
 .ic-star:before {
-  content: '\e910';
-  color: #fff;
-}
+  content: '\e910'; }
 
 .ic-star-score:before {
-  content: '\e911';
-  color: #575757;
-}
+  content: '\e911'; }
 
 .tag-club {
   display: inline-flex;
@@ -121,12 +80,56 @@ i {
   height: 22px;
   border-radius: 4px;
   margin: 4px 7px;
-  font-family: 'Pretendard', sans-serif;
+  font-family: "Pretendard", sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 1.4;
   color: #ffffff;
-  background-color: #5465ff;
-}
+  background-color: #5465ff; }
+
+.navigation-bar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #16181f;
+  height: 63px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; }
+  .navigation-bar .nav-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: #67707b; }
+    .navigation-bar .nav-item.active {
+      color: #ffffff; }
+      .navigation-bar .nav-item.active i {
+        color: #ffffff; }
+    .navigation-bar .nav-item i {
+      font-size: 24px;
+      color: inherit; }
+    .navigation-bar .nav-item span {
+      font-size: 12px;
+      color: inherit; }
+
+.page-container {
+  padding-bottom: 63px; }
+
+.main-content {
+  padding: 16px; }
+
+.main-page header {
+  text-align: center;
+  margin-bottom: 16px; }
+  .main-page header h1 {
+    font-size: 20px;
+    color: #ffffff; }
+  .main-page header p {
+    font-size: 16px;
+    color: #67707b; }
 
 /*# sourceMappingURL=style.css.map */
