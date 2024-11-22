@@ -1,0 +1,22 @@
+.book-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+
+  .book-card {
+    flex: 0 0 auto; /* 고정된 너비 */
+  }
+
+  .add-book-btn {
+    flex: 0 0 auto; /* 고정된 너비 */
+  }
+
+  /* 스크롤 숨김 */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none; /* IE 및 Edge */
+  scrollbar-width: none; /* Firefox */
+}

@@ -1,0 +1,74 @@
+@import '../constants/typography.scss';
+@import '../constants/colors.scss';
+
+.book-card {
+  width: 227px;
+  height: 396px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  padding: 16px;
+  margin-right: 16px;
+  position: relative;
+  overflow: hidden;
+
+  // 도서 이미지 배경 설정
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/im_book.png'); // 도서 이미지 절대 경로
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0; // 배경 이미지 가장 뒤로 설정
+  }
+
+  // 그라데이션 추가
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/im_gd.png'); // 그라데이션 이미지 경로
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.6; // 투명도 설정
+    z-index: 1; // 그라데이션을 도서 이미지 위에 배치
+  }
+
+  .book-tag,
+  .book-title,
+  .book-author,
+  .progress {
+    position: relative;
+    z-index: 2; // 그라데이션 위에 표시
+  }
+
+  .progress {
+    .circle-progress {
+      z-index: 2; // 그래프도 그라데이션 위에
+    }
+  }
+
+  // 버튼이 그라데이션에 간섭받지 않도록 설정
+  .add-book-btn {
+    position: relative;
+    z-index: 3; // 버튼은 모든 요소 위에
+    background-color: $dark-30;
+    border: 2px dashed $t-3;
+    color: $t-3;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $dark-20;
+    }
+  }
+}

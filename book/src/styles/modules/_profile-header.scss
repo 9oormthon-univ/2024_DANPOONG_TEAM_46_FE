@@ -1,0 +1,33 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+
+  .profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .profile-info {
+    flex: 1;
+    margin-left: 10px;
+
+    .nickname {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .star-name {
+      font-size: 14px;
+      color: #bbbbbb;
+    }
+  }
+
+  .star-image {
+    width: 50px;
+    height: 50px;
+  }
+}

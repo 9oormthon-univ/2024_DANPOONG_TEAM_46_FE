@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'; // NavLink 임포트
+import '../styles/modules/_navigation.scss';
 import '../style.css'
 
 const NavigationBar = () => {
