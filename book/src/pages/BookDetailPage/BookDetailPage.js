@@ -6,7 +6,13 @@ const BookDetailPage = () => {
   const navigate = useNavigate();
 
   const [activeStatus, setActiveStatus] = useState('독서중'); // 독서 상태 관리
-  const images = ['/gallery1.png', '/gallery2.png', '/gallery3.png', '/gallery4.png', '/gallery5.png'];
+  const images = [
+    '/img/gallery1.png',
+    '/img/gallery2.png',
+    '/img/gallery3.png',
+    '/img/gallery4.png',
+    '/img/gallery5.png',
+  ]; // 이미지 경로 수정
 
   return (
     <div className={styles.container}>
