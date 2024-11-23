@@ -1,0 +1,73 @@
+.settingsPage {
+
+  color: white;
+  height: 90vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10vh;
+  justify-content: center; /* 중앙 정렬 */
+  width: 100%; /* 부모 너비 기준으로 중앙 배치 */
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; /* 텍스트 중앙 정렬 */
+  flex: 1; /* h1이 가로축에서 중심을 차지하게 설정 */
+}
+
+.settingsList {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.settingsList li {
+  padding: 0px 0;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.settingsList li:hover {
+  color: #aaa;
+}
+
+.logoutButton {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.button {
+    width: 100%; /* 버튼이 리스트의 전체 너비를 차지 */
+    background: none;
+    border: none;
+    color: #fff;
+    text-align: left; /* 왼쪽 정렬 */
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold; /* 텍스트 두껍게 */
+    padding: 16px 0; /* 텍스트 위아래 간격 */
+    border-bottom: 1px solid #2F374C; /* 구분선 추가 */
+  }
+
+.logoutButton:hover {
+  color: #aaa;
+}
+
+.icon {
+  font-size: 24px; /* 공통 아이콘 크기 */
+  cursor: pointer;
+}

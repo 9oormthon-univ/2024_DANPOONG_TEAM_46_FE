@@ -1,76 +1,111 @@
-import React from 'react';
-import NavigationBar from '../../components/NavigationBar'; // 네비게이션 컴포넌트
-import styles from './MyLibrary.module.css'; // CSS 모듈을 불러옵니다.
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import styles from './MyLibraryPage.module.css'
+import NavigationBar from '../../components/NavigationBar'
 
 const MyLibraryPage = () => {
+  const navigate = useNavigate(); // useNavigate 훅 사용
+  const books = [
+    {
+      title: '채식주의자',
+      author: '한강',
+      current: 240,
+      total: 340,
+      image: '../../assets/im-book.png',
+    },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '../../assets/im-book.png',
+    },
+
+    // 더 많은 책 데이터 추가 가능
+  ]
+
   return (
-    <div className={styles.myLibraryPage}>
-      {/* 헤더 */}
-      <header className={styles.header}>
-        <div className={styles.profile}>
-          <img
-            src="/img/star/profile.jpg"
-            alt="Profile"
-            className={styles.profileImage}
-          />
-          <div className={styles.profileInfo}>
-            <h2>단풍톤님의 서재</h2>
-            <p>사자자리</p>
+    <div className={styles.libraryPage}>
+      {/* 상단 프로필 영역 */}
+      <div className={styles.profileHeader}>
+        <div className={styles.profileInfo}>
+          <div className={styles.profileImage}>
+            <img
+              className={styles.profileImage}
+              src="/img/star/lion.png"
+              alt="프로필 이미지"
+            />
+          </div>
+          <div className = {styles.profileBox}>
+            <h1 className={styles.profileName}>단풍톤님의 서재</h1>
+            <p className={styles.starName}>사자자리</p>
           </div>
         </div>
-        <i className={`${styles.settingsIcon} ic-settings`}></i>
-      </header>
+        <i
+          className={`${styles.icon} ic-setting`}
+          onClick={() => navigate('/settings')}
+        />
+      </div>
 
-      {/* 주요 정보 섹션 */}
-      <div className={styles.statsSection}>
-        <div className={styles.stat}>
-          <p>별자리</p>
-          <h3>2개</h3>
+      {/* 통계 영역 */}
+      <div className={styles.stats}>
+        <div className={styles.statItem}>
+          <i className={`${styles.icon} ic-star`} />
+          <p className={styles.statText}>별자리</p>
+          <p className={styles.statValue}>2개</p>
         </div>
-        <div className={styles.stat}>
-          <p>읽은 책</p>
-          <h3>23권</h3>
+        <div className={styles.statItem}>
+          <i className={`${styles.icon} ic-book`} />
+          <p className={styles.statText}>읽은 책</p>
+          <p className={styles.statValue}>23권</p>
         </div>
-        <div className={styles.stat}>
-          <p>북클럽 참여횟수</p>
-          <h3>3번</h3>
+        <div className={styles.statItem}>
+          <i className={`${styles.icon} ic-club`} />
+          <p className={styles.statText}>북클럽 참여횟수</p>
+          <p className={styles.statValue}>3번</p>
         </div>
       </div>
 
-      {/* 검색 바 */}
-      <div className={styles.searchSection}>
+      {/* 검색 및 정렬 */}
+      <div className={styles.filterSection}>
         <input
           type="text"
           placeholder="책 제목을 입력해주세요."
-          className={styles.searchBar}
+          className={styles.searchInput}
         />
         <button className={styles.sortButton}>
-          <i className="ic-sort"></i>
-          최신순
+          <i className={`${styles.icon} ic-filter`} /> 최신순
         </button>
       </div>
 
       {/* 책 리스트 */}
-      <div className={styles.booksSection}>
-        <div className={styles.bookCard}>
-          <img src="/img/book-card-bg.png" alt="채식주의자" />
-          <div className={styles.bookInfo}>
-            <p className={styles.bookTag}>북클럽</p>
-            <p className={styles.bookTitle}>채식주의자</p>
-            <p className={styles.bookAuthor}>한강</p>
-            <div className={styles.progressBar}>
-              <span>240p / 340p</span>
-              <span>100%</span>
+      <div className={styles.bookList}>
+        {books.map((book, index) => (
+          <div key={index} className={styles.bookCard}>
+            <img
+              src="/img/book-card-bg.png"
+              alt={book.title}
+              className={styles.bookImage}
+            />
+            <div className={styles.bookInfo}>
+              <span className={styles.bookTag}>북클럽</span>
+              <h3 className={styles.bookTitle}>{book.title}</h3>
+              <p className={styles.bookAuthor}>{book.author}</p>
+              <div className={styles.bookProgress}>
+                <span>{`${book.current}p / ${book.total}p`}</span>
+                <span>{`${Math.round(
+                  (book.current / book.total) * 100
+                )}%`}</span>
+              </div>
             </div>
           </div>
-        </div>
-        {/* 추가 책 카드 작성 가능 */}
+        ))}
       </div>
 
-      {/* 네비게이션 */}
+      {/* 네비게이션 바 */}
       <NavigationBar />
     </div>
-  );
-};
+  )
+}
 
-export default MyLibraryPage;
+export default MyLibraryPage
