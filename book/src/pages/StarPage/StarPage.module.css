@@ -172,18 +172,39 @@ p{
 }
 
 .modalContent {
-
+  position: relative; /* Lottie와 이미지의 레이어 조정 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  max-width: 300px;
+  max-width: 400px;
+  overflow: hidden; /* Lottie가 모달 경계를 넘어가지 않도록 설정 */
+}
+
+.lottieWrapper {
+  position: absolute;
+  top: 50%; /* 모달의 중앙에 배치 */
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  z-index: 0; /* 이미지 뒤로 이동 */
 }
 
 .modalImage {
-  width: 100px;
+  width: 100px; /* 아이콘 이미지 크기 */
   height: 100px;
-  margin-bottom: 15px;
+  z-index: 1; /* Lottie 애니메이션 위에 표시 */
 }
+
+
+.lottieAnimation {
+  width: 500px; /* Lottie 애니메이션 크기 */
+  height: 500px;
+  margin-bottom: -80px; /* 이미지와 간격 조정 */
+}
+
 
 .confirmButton {
   padding: 10px 20px;

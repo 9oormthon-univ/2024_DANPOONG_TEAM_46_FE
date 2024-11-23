@@ -1,31 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import NavigationBar from "../../components/NavigationBar";
 import Lottie from "react-lottie-player";
+import animationData from "../../assets/lottieAnimation.json"; // JSON 파일 경로
 import styles from "./StarPage.module.css";
-
-const lottieAnimationUrl =
-  "https://lottie.host/d0e04e04-8be5-4fea-a183-7cb283e6d284/4NdzgdZ5z7.lottie";
 
 const StarPage = () => {
   const [drawCount, setDrawCount] = useState(5); // 뽑기 가능 횟수
   const [selectedStar, setSelectedStar] = useState(null); // 뽑힌 별자리
   const [showModal, setShowModal] = useState(false); // 모달 표시 여부
-  const [animationData, setAnimationData] = useState(null); // Lottie 애니메이션 데이터
-
-  // Lottie 애니메이션 데이터 로드
-  useEffect(() => {
-    const loadAnimation = async () => {
-      try {
-        const response = await fetch(lottieAnimationUrl);
-        const data = await response.json();
-        setAnimationData(data);
-      } catch (error) {
-        console.error("Failed to load Lottie animation:", error);
-      }
-    };
-
-    loadAnimation();
-  }, []);
 
   const starSigns = [
     { name: "사자자리", img: "/img/star/lion.png", active: true },
@@ -118,19 +100,27 @@ const StarPage = () => {
         <div className={styles.modal}>
           <div className={styles.modalContent}>
             {/* Lottie 애니메이션 */}
-            {animationData && (
+            <div className={styles.lottieWrapper}>
               <Lottie
                 loop={false}
                 animationData={animationData}
                 play
-                style={{ width: 200, height: 200 }}
+                style={{
+                  width: "400px", // 애니메이션 크게 설정
+                  height: "400px", // 애니메이션 크게 설정
+                  position: "absolute", // 이미지 뒤로 이동
+                  zIndex: 0, // 아이콘보다 뒤로 배치
+                }}
               />
-            )}
+            </div>
+
+            {/* 별자리 아이콘 이미지 */}
             <img
               src={selectedStar.img}
               alt={selectedStar.name}
               className={styles.modalImage}
             />
+
             <h2>{selectedStar.name} 획득을 축하드립니다!</h2>
             <p>{new Date().toLocaleDateString()} 획득</p>
             <button className={styles.confirmButton} onClick={closeModal}>
@@ -139,6 +129,8 @@ const StarPage = () => {
           </div>
         </div>
       )}
+
+
 
       {/* 네비게이션 바 */}
       <NavigationBar />
