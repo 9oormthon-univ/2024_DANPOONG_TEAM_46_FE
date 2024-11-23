@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'book7';
   src: url("./assets/fonts/book7.eot?");
@@ -115,5 +116,55 @@ i {
     .navigation-bar .nav-item span {
       font-size: 12px;
       color: inherit; }
+
+body,
+html {
+  margin: 0vh;
+  /* 기본 여백 제거 */
+  padding: 0;
+  /* 기본 여백 제거 */
+  width: 100%;
+  /* 화면 전체 너비 */
+  height: 100%;
+  /* 화면 전체 높이 */ }
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* 컨테이너 안 요소들을 위아래로 균등하게 배치 */
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: top;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Pretendard', sans-serif;
+  padding: 0vh 0vh;
+  /* 상하 여백 추가 */ }
+  .login-page .login-logo {
+    width: 200px;
+    margin-top: 30vh; }
+  .login-page .login-subtitle {
+    font-size: 16px;
+    color: #8b929a;
+    margin-top: -2vh; }
+  .login-page .kakao-login-button {
+    width: 300px;
+    height: auto;
+    cursor: pointer;
+    margin-top: 25vh;
+    /* 로그인 버튼과 간격 설정 */ }
+    .login-page .kakao-login-button:hover {
+      opacity: 0.9; }
+  .login-page .terms-link {
+    font-size: 14px;
+    color: #8b929a;
+    text-decoration: none;
+    margin-bottom: 18vh;
+    /* 로그인 버튼과 간격 설정 */ }
+    .login-page .terms-link:hover {
+      text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */
