@@ -184,11 +184,24 @@ p{
   overflow: hidden;
 }
 
+.confirmButton {
+  position: absolute; /* 절대 위치 지정 */
+  top: 20px; /* 모달의 상단에 배치 */
+  right: 20px; /* 오른쪽 정렬 */
+  padding: 10px 20px;
+  background: #5465ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10; /* 최상위 요소로 설정 */
+}
+
 .modalImage {
   width: 100px; /* 아이콘 이미지 크기 */
   height: 100px;
   position: relative;
-  z-index: 0; /* 아이콘을 아래로 배치 */
+  z-index: 1; /* 아이콘을 아래로 배치 */
 }
 
 .lottieWrapper {
@@ -196,7 +209,7 @@ p{
   top: 50%; /* 모달의 세로 중앙 */
   left: 50%; /* 모달의 가로 중앙 */
   transform: translate(-50%, -50%); /* 완벽한 중앙 정렬 */
-  z-index: 1; /* 애니메이션을 아이콘 위로 표시 */
+  z-index: 5; /* 애니메이션을 아이콘 위로 표시 */
 }
 
 
