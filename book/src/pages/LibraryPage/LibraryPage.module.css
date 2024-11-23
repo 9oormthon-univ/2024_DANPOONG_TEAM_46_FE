@@ -138,6 +138,61 @@
   margin-top: 10px;
 }
 
+.bookProgressBar {
+  background: #ddd;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.bookProgressFill {
+  background: #5465ff;
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+/* 원형 진행 바 */
+.progressCircle {
+  position: relative;
+  width: 60px; /* 외부 원 크기 */
+  height: 60px; 
+  border-radius: 50%;
+  background: conic-gradient(
+    #5465ff calc(var(--progress) * 1%), /* 진행도에 따라 채워지는 부분 */
+    #ddd calc(var(--progress) * 1%)
+  );
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 중앙에 구멍 뚫기 */
+.progressCircle::before {
+  content: "";
+  position: absolute;
+  width: 40px; /* 구멍 크기 */
+  height: 40px;
+  border-radius: 50%;
+  background: #262a35; /* 부모 배경색과 동일하게 처리하여 투명처럼 보이게 설정 */
+  z-index: 1; /* 위로 표시 */
+}
+
+/* 중앙 텍스트 */
+.progressText {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+  color: white; /* 텍스트 색상 */
+  z-index: 2; /* 구멍 위에 텍스트 표시 */
+  text-align: center;
+}
+
+
+
 .moreButton {
   padding: 10px 50px;
   background: transparent; /* 투명한 배경 */
