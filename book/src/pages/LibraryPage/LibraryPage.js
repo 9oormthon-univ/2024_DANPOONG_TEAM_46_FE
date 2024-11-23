@@ -21,7 +21,7 @@ const LibraryPage = () => {
       author: '정대건',
       current: 300,
       total: 500,
-      image: '/img/im-book2.png',
+      image: '/img/im-book3.png',
     },
     {
       id: 3,
@@ -29,7 +29,7 @@ const LibraryPage = () => {
       author: '손원평',
       current: 120,
       total: 200,
-      image: '/img/im-book3.png',
+      image: '/img/im-book2.png',
     },
   ];
 
