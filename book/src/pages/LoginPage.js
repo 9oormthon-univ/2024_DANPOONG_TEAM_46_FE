@@ -3,7 +3,7 @@ import '../style.css' // 스타일 가져오기
 
 const LoginPage = () => {
   const REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY // .env에 저장된 키
-  const REDIRECT_URI = 'http://localhost:8080/api/v1/oauth/kakao/callback' // 백엔드 리디렉션 URI
+  const REDIRECT_URI = 'http://54.180.141.87:8080/swagger-ui/index.html?#/' // 백엔드 리디렉션 URI
 
   const handleKakaoLogin = () => {
     const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`
