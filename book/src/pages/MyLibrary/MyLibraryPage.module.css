@@ -1,17 +1,16 @@
 .libraryPage {
-  padding: 20px;
+  padding: 10px;
   color: #fff;
-
   background-size: cover;
-  height: 100vh;
-  overflow-y: auto;
+  height: 90vh;
+  width: 90vw;
 }
 
 .profileHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 7vh;
   margin-bottom: 3vh;
   position: relative; /* 필요하면 fixed로 수정 */
   z-index: 10; /* 다른 요소보다 위에 표시되도록 설정 */
@@ -28,9 +27,7 @@
   align-items: flex-start; /* 가로축 왼쪽 정렬 */
   justify-content: center; /* 세로축 중앙 정렬 */
   height: 100%; /* 부모 요소 안에서 세로 중앙 정렬 */
-  
 }
-
 
 .profileImage img {
   width: 50px;
@@ -56,38 +53,118 @@
   cursor: pointer;
 }
 
+/* 정렬 버튼 스타일 */
+.sortWrapper {
+  display: flex;
+  justify-content: flex-end; /* 버튼 정렬 */
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sortButton .ic-filter {
+  font-size: 16px; /* 아이콘 크기 조정 */
+  margin-right: 8px; /* 최신순과 아이콘 간 간격 */
+}
+
+.sortButton:hover {
+  background-color: #444;
+}
+
 .stats {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly; /* 항목 간 동일한 간격 */
   margin-bottom: 20px;
+  
 }
 
 .statItem {
+  flex: 1; /* 각 요소의 넓이를 동일하게 설정 */
   text-align: center;
+  position: relative; /* 선을 위한 상대 위치 설정 */
 }
+
+.statItem i {
+  display: block; /* 아이콘을 블록 요소로 변환 */
+  font-size: 20px; /* 아이콘 크기 조정 */
+  margin-bottom: 4px; /* 아이콘과 텍스트 사이 간격 */
+  color: #8B929A; /* 아이콘 색상 회색 */
+  
+}
+
+
+.statItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px; /* 선분 두께 */
+  height: 100%;
+  background-color: #2F374C; /* 선분 색상 */
+}
+
 
 .statText {
   font-size: 12px;
+  margin: 0.1px; /* 텍스트와 숫자 사이 간격 */
+  color: #8B929A; /* 텍스트 색상 회색 */
+  
 }
 
 .statValue {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px; /* 숫자 크기 */
+  font-weight: bold; /* 숫자 강조 */
+  margin: 0; /* 위 간격 제거 */
 }
 
 .filterSection {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  flex-direction: column; /* 세로 방향으로 정렬 */
 }
+
+/* 검색창 스타일 */
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #2F374C;
+  border-radius: 30px;
+  background-color: #222631;
+  padding: 1px;
+  color: #67707B; /* 아이콘 색상 */
+  position: relative; /* 아이콘을 입력창 안에 배치 */
+}
+
+.inputWrapper .ic-search {
+  font-size: 15px; /* 아이콘 크기 조정 */
+  margin-left: 15px; /* 왼쪽 마진을 늘려 위치 조정 */
+  margin-right: 5px; /* 오른쪽 마진 추가 */
+  flex-shrink: 0; /* 아이콘이 줄어들지 않도록 설정 */
+}
+
+
 
 .searchInput {
   flex: 1;
+  width: 100%;
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border: 0px solid #555;
+  background-color: #222631;
   margin-right: 10px;
+  outline: none; /* 포커스 테두리 제거 */
+  color: #fff; /* 텍스트 색상을 흰색으로 설정 */
 }
+
 
 .sortButton {
   background: none;
@@ -100,48 +177,86 @@
   align-items: center;
 }
 
+
 .bookList {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 4px;
+  height: 30vh;
+  width: 100%;  
+  justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
+  
 }
 
 .bookCard {
-  background: #222;
+  position: relative; /* 자식 요소의 절대 위치 지정 가능 */
   border-radius: 10px;
   overflow: hidden;
-  width: calc(50% - 10px);
+  width: calc(50% - 10px);  
+  justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
+
+}
+
+.bookCard::before {
+  content: ''; /* 빈 가상 요소 추가 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* 이미지를 전체에 맞춤 */
+  background-position: center; /* 이미지 중앙 정렬 */
+  filter: blur(5px); /* 블러 효과 추가 */
+  z-index: 1; /* 다른 요소보다 아래에 표시 */
 }
 
 .bookImage {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+  width: 100%; /* 부모 컨테이너의 너비에 맞춤 */
+  object-fit: contain; /* 이미지 비율 유지하면서 짤림 방지 */
+  border-radius: 10px; /* 둥근 모서리 유지 */
+  
 }
 
+
+
 .bookInfo {
+  position: absolute; /* 부모 요소(bookCard) 위에 겹쳐지도록 설정 */
+  bottom: 0; /* 카드의 아래쪽에 위치 */
+  justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
+  flex-wrap: wrap;
+  width: 92%;
+  text-align: center;
   padding: 10px;
+  z-index: 2; /* 이미지 위에 표시되도록 설정 */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); /* 위로 갈수록 투명해지는 효과 */  color: #fff; /* 텍스트 색상 */
+
+  
 }
 
 .bookTag {
+  display: block; /* 독립적인 블록 요소 */
   display: inline-block;
-  background: #444;
+  background: #5465FF;
   color: #fff;
   border-radius: 5px;
   padding: 2px 5px;
   font-size: 12px;
   margin-bottom: 10px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  margin: 0; /* 여백이 있을 경우 제거 */
 }
 
 .bookTitle {
   font-size: 16px;
-  margin: 0;
+  margin: 0 10px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
 .bookAuthor {
   font-size: 14px;
   color: #aaa;
-  margin: 5px 0;
+  margin: 5px 10px;
+  text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
 .bookProgress {
@@ -149,4 +264,6 @@
   justify-content: space-between;
   font-size: 12px;
   color: #ccc;
+  margin-bottom: 1vh;
+  padding: 1vh;
 }

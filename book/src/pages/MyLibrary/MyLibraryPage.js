@@ -1,25 +1,49 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import styles from './MyLibraryPage.module.css'
 import NavigationBar from '../../components/NavigationBar'
 
 const MyLibraryPage = () => {
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate() // useNavigate 훅 사용
   const books = [
     {
       title: '채식주의자',
       author: '한강',
       current: 240,
       total: 340,
-      image: '../../assets/im-book.png',
+      image: '/img/im-book.png',
     },
     {
       title: '급류',
       author: '정대건',
       current: 300,
       total: 500,
-      image: '../../assets/im-book.png',
+      image: '/img/im-book.png',
     },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+
+
 
     // 더 많은 책 데이터 추가 가능
   ]
@@ -36,7 +60,7 @@ const MyLibraryPage = () => {
               alt="프로필 이미지"
             />
           </div>
-          <div className = {styles.profileBox}>
+          <div className={styles.profileBox}>
             <h1 className={styles.profileName}>단풍톤님의 서재</h1>
             <p className={styles.starName}>사자자리</p>
           </div>
@@ -68,14 +92,22 @@ const MyLibraryPage = () => {
 
       {/* 검색 및 정렬 */}
       <div className={styles.filterSection}>
-        <input
-          type="text"
-          placeholder="책 제목을 입력해주세요."
-          className={styles.searchInput}
-        />
-        <button className={styles.sortButton}>
-          <i className={`${styles.icon} ic-filter`} /> 최신순
-        </button>
+        {/* 검색창 */}
+        <div className={styles.inputWrapper}>
+          <i className={`${styles.icon} ic-search`} />
+          <input
+            type="text"
+            placeholder="책 제목을 입력해주세요."
+            className={styles.searchInput}
+          />
+        </div>
+
+        {/* 최신순 버튼 */}
+        <div className={styles.sortWrapper}>
+          <button className={styles.sortButton}>
+            <i className={`${styles.icon} ic-filter`} />  최근 읽은 순
+          </button>
+        </div>
       </div>
 
       {/* 책 리스트 */}
@@ -83,7 +115,7 @@ const MyLibraryPage = () => {
         {books.map((book, index) => (
           <div key={index} className={styles.bookCard}>
             <img
-              src="/img/book-card-bg.png"
+              src={book.image}
               alt={book.title}
               className={styles.bookImage}
             />
