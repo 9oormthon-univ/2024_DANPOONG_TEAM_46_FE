@@ -174,24 +174,21 @@ p{
 
 
 .confirmButton {
-  position: absolute; /* 절대 위치 지정 */
-  top: 20px; /* 모달의 상단에 배치 */
-  right: 20px; /* 오른쪽 정렬 */
-  padding: 10px 20px;
+  width: 90%; /* 가로로 길게 설정 */
+  padding: 15px; /* 세로로 짧게 설정 */
+  margin-top: 20px; /* 텍스트 아래 간격 */
+  margin-bottom: 10px; /* 버튼과 모달 하단 간격 */
   background: #5465ff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
   cursor: pointer;
-  z-index: 10; /* 최상위 요소로 설정 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
 }
 
-.modalImage {
-  width: 100px; /* 아이콘 이미지 크기 */
-  height: 100px;
-  position: relative;
-  z-index: 1; /* 아이콘을 아래로 배치 */
-}
 
 .lottieWrapper {
   position: absolute; /* 애니메이션 위치 설정 */
@@ -234,11 +231,31 @@ p{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between; /* 요소 사이 간격 균등 분배 */
   padding: 20px;
   background: #2f374c;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
   bottom: 0;
+  position: relative; /* 모달 내용의 위치 조정 */
 }
 
+.modalImage {
+  width: 120px; /* 아이콘 이미지 크기 */
+  height: 120px;
+  margin-bottom: 20px; /* 이미지와 텍스트 간격 */
+}
+
+
+h2 {
+  margin-bottom: 10px; /* 텍스트와 날짜 간격 */
+  color: white;
+  font-size: 24px;
+}
+
+p {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 20px; /* 날짜와 버튼 간격 */
+}
