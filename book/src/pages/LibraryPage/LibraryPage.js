@@ -8,6 +8,7 @@ const LibraryPage = () => {
 
   const books = [
     {
+      id: 1, // 고유 ID 추가
       title: '채식주의자',
       author: '한강',
       current: 240,
@@ -15,6 +16,7 @@ const LibraryPage = () => {
       image: '/img/im-book.png',
     },
     {
+      id: 2,
       title: '급류',
       author: '정대건',
       current: 300,
@@ -22,6 +24,7 @@ const LibraryPage = () => {
       image: '/img/im-book.png',
     },
     {
+      id: 3,
       title: '어떤 책',
       author: '작가 이름',
       current: 120,
@@ -29,6 +32,10 @@ const LibraryPage = () => {
       image: '/img/im-book.png',
     },
   ];
+
+  const handleBookClick = (id) => {
+    navigate(`/book/${id}`); // 클릭 시 해당 도서의 ID로 상세 페이지로 이동
+  };
 
   return (
     <div className={styles.container}>
@@ -60,8 +67,12 @@ const LibraryPage = () => {
         <div className={styles.readingSection}>
           <h2 className={styles.sectionTitle}> 읽고 있는 도서</h2>
           <div className={styles.bookList}>
-            {books.map((book, index) => (
-              <div key={index} className={styles.bookCard}>
+            {books.map((book) => (
+              <div
+                key={book.id}
+                className={styles.bookCard}
+                onClick={() => handleBookClick(book.id)} // 카드 클릭 이벤트 추가
+              >
                 <img
                   src={book.image}
                   alt={book.title}
@@ -84,7 +95,6 @@ const LibraryPage = () => {
               <i className={`${styles.icPlus} ic-plus`}></i>
               <span>도서 추가</span>
             </button>
-
           </div>
         </div>
       </div>

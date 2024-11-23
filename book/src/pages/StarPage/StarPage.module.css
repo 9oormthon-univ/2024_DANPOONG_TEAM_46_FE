@@ -1,0 +1,220 @@
+.container {
+  height: calc(100vh - 63px);
+  width: 90vw;
+  max-width: 1200px;
+  overflow-y: auto; /* 세로 스크롤 활성화 */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari에서 스크롤바 숨기기 */
+}
+
+.starGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2개씩 배치 */
+  gap: 20px; /* 카드 간의 간격을 더 넓게 */
+  padding: 20px;
+  overflow: hidden; /* 내부 스크롤바 숨기기 */
+}
+
+
+p{
+  padding: 0;
+  margin: 0;
+}
+
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7vh;
+  margin-bottom: 3vh;
+  position: relative; /* 필요하면 fixed로 수정 */
+  z-index: 10; /* 다른 요소보다 위에 표시되도록 설정 */
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+}
+
+.profileBox {
+  display: flex; /* Flexbox 활성화 */
+  flex-direction: column; /* 세로로 정렬 */
+  align-items: flex-start; /* 가로축 왼쪽 정렬 */
+  justify-content: center; /* 세로축 중앙 정렬 */
+  height: 100%; /* 부모 요소 안에서 세로 중앙 정렬 */
+}
+
+.profileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profileName {
+  font-size: 20px;
+  margin: 0;
+  margin-top: 15px;
+}
+
+
+
+.starCard {
+  position: relative; /* 아이콘과 텍스트 위치 지정용 */
+  display: flex;
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2F374C, #1A1E27); /* 그라데이션 추가 */
+  text-align: center;
+  width: 100%; /* 카드가 그리드 칸을 가득 채우도록 */
+  height: 150px; /* 카드 높이 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 카드에 약간의 그림자 */
+  
+}
+
+.starCard p {
+  position: absolute; /* 텍스트 위치 설정 */
+  top: 20px; /* 카드의 상단 여백 */
+  left: 20px; /* 카드의 좌측 여백 */
+  font-size: 16px;
+  color: white; /* 텍스트 색상 */
+  margin: 0;
+}
+
+.starCard img {
+  position: absolute; /* 아이콘 위치 설정 */
+  bottom: 10px; /* 카드의 하단 여백 */
+  right: 10px; /* 카드의 우측 여백 */
+  width: 90px; /* 아이콘 크기 */
+  height: 90px;
+}
+
+
+.starCard.active {
+  opacity: 1;
+}
+
+.starCard.inactive {
+  opacity: 0.4;
+}
+
+.starCard.active {
+  opacity: 1;
+}
+
+.starCard.inactive {
+  opacity: 0.4;
+}
+
+/* 하단 버튼 고정 */
+.footer {
+  position: fixed;
+  bottom: 75px; /* 네비게이션 높이 (65px) + 간격 (10px) */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  z-index: 10;
+}
+
+.drawButton {
+  padding: 10px 20px;
+  background: #5465ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.drawButton:hover {
+  background: #4151c7;
+}
+
+.disabledButton {
+  padding: 10px 20px;
+  background: #888;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.modalContent {
+  position: relative; /* Lottie와 이미지의 레이어 조정 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  overflow: hidden; /* Lottie가 모달 경계를 넘어가지 않도록 설정 */
+}
+
+.lottieWrapper {
+  position: absolute;
+  top: 50%; /* 모달의 중앙에 배치 */
+  left: 50%;
+  transform: translate(-50%, -50%); /* 중앙 정렬 */
+  z-index: 0; /* 이미지 뒤로 이동 */
+}
+
+.modalImage {
+  width: 100px; /* 아이콘 이미지 크기 */
+  height: 100px;
+  z-index: 1; /* Lottie 애니메이션 위에 표시 */
+}
+
+
+.lottieAnimation {
+  width: 500px; /* Lottie 애니메이션 크기 */
+  height: 500px;
+  margin-bottom: -80px; /* 이미지와 간격 조정 */
+}
+
+
+.confirmButton {
+  padding: 10px 20px;
+  background: #5465ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmButton:hover {
+  background: #4151c7;
+}

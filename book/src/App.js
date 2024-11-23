@@ -2,11 +2,12 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LibraryPage from './pages/LibraryPage/LibraryPage' // 도서관 페이지 (메인 페이지)
 import ClubPage from './pages/ClubPage' // 북클럽 페이지
-import StarPage from './pages/StarPage' // 별자리 페이지
+import StarPage from './pages/StarPage/StarPage' // 별자리 페이지
 import MyLibraryPage from './pages/MyLibrary/MyLibraryPage' // 내 서재 페이지
 import SettingsPage from './pages/SettingsPage/SettingsPage';
 import LoginPage from './pages/LoginPage'
 
+import BookDetailPage from './pages/BookDetailPage/BookDetailPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<LibraryPage />} /> {/* 메인 페이지 */}
+          <Route path="/book/:id" element={<BookDetailPage />} />
           <Route path="/club" element={<ClubPage />} />
           <Route path="/star" element={<StarPage />} />
           <Route path="/my-library" element={<MyLibraryPage />} />

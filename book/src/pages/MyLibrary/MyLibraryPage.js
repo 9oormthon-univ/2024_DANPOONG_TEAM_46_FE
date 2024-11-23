@@ -22,6 +22,42 @@ const MyLibraryPage = () => {
       total: 500,
       image: '/img/im-book.png',
     },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+    {
+      title: '급류',
+      author: '정대건',
+      current: 300,
+      total: 500,
+      image: '/img/im-book.png',
+    },
+    
   ]
 
   const galleryData = [
