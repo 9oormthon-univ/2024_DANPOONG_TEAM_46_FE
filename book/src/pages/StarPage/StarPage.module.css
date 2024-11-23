@@ -2,11 +2,31 @@
   height: calc(100vh - 63px);
   width: 90vw;
   max-width: 1200px;
-  overflow-y: auto;
-  margin: 0 auto;
+  overflow-y: auto; /* 세로 스크롤 활성화 */
+  margin: 0;
   display: flex;
   flex-direction: column;
   position: relative;
+  -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari에서 스크롤바 숨기기 */
+}
+
+.starGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2개씩 배치 */
+  gap: 20px; /* 카드 간의 간격을 더 넓게 */
+  padding: 20px;
+  overflow: hidden; /* 내부 스크롤바 숨기기 */
+}
+
+
+p{
+  padding: 0;
+  margin: 0;
 }
 
 .contentWrapper {
@@ -19,8 +39,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 6vh;
+  margin-top: 7vh;
   margin-bottom: 3vh;
+  position: relative; /* 필요하면 fixed로 수정 */
+  z-index: 10; /* 다른 요소보다 위에 표시되도록 설정 */
 }
 
 .profileInfo {
@@ -29,9 +51,11 @@
 }
 
 .profileBox {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex; /* Flexbox 활성화 */
+  flex-direction: column; /* 세로로 정렬 */
+  align-items: flex-start; /* 가로축 왼쪽 정렬 */
+  justify-content: center; /* 세로축 중앙 정렬 */
+  height: 100%; /* 부모 요소 안에서 세로 중앙 정렬 */
 }
 
 .profileImage {
@@ -41,28 +65,52 @@
   margin-right: 10px;
 }
 
-.starGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  padding: 20px;
+.profileName {
+  font-size: 20px;
+  margin: 0;
+  margin-top: 15px;
 }
 
+
+
 .starCard {
+  position: relative; /* 아이콘과 텍스트 위치 지정용 */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* 수직 정렬 */
+  justify-content: center; /* 수평 정렬 */
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
+  background: linear-gradient(135deg, #2F374C, #1A1E27); /* 그라데이션 추가 */
   text-align: center;
+  width: 100%; /* 카드가 그리드 칸을 가득 채우도록 */
+  height: 150px; /* 카드 높이 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* 카드에 약간의 그림자 */
+  
+}
+
+.starCard p {
+  position: absolute; /* 텍스트 위치 설정 */
+  top: 20px; /* 카드의 상단 여백 */
+  left: 20px; /* 카드의 좌측 여백 */
+  font-size: 16px;
+  color: white; /* 텍스트 색상 */
+  margin: 0;
 }
 
 .starCard img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  position: absolute; /* 아이콘 위치 설정 */
+  bottom: 10px; /* 카드의 하단 여백 */
+  right: 10px; /* 카드의 우측 여백 */
+  width: 90px; /* 아이콘 크기 */
+  height: 90px;
+}
+
+
+.starCard.active {
+  opacity: 1;
+}
+
+.starCard.inactive {
+  opacity: 0.4;
 }
 
 .starCard.active {
