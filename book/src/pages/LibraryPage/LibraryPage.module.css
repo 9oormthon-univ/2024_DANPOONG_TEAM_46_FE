@@ -125,10 +125,7 @@
   margin-top: 10px;
 }
 
-.bookAuthor {
-  font-size: 16px;
-  color: #aaa;
-}
+
 
 .bookProgress {
   display: flex; /* 플렉스박스 활성화 */
@@ -138,58 +135,67 @@
   margin-top: 10px;
 }
 
+
+.bookTitleWrapper {
+  display: flex;
+  justify-content: space-between; /* 제목과 원형 그래프를 양옆으로 배치 */
+  align-items: center;
+  margin-bottom: 10px; /* 제목과 저자 사이 간격 추가 */
+}
+
+.bookAuthor {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0 0 15px; /* 저자와 진행 바 사이 간격 추가 */
+}
+
 .bookProgressBar {
-  background: #ddd;
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 10px;
+  position: relative;
+  height: 6px; /* 진행 바 높이 */
+  background-color: #ddd; /* 진행 바 배경색 */
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden; /* 경계선 밖 영역 숨김 */
 }
 
 .bookProgressFill {
-  background: #5465ff;
   height: 100%;
-  width: 0;
-  transition: width 0.3s ease;
+  background-color: #5465ff; /* 진행 바 색상 */
+  border-radius: 3px;
+  transition: width 0.3s ease; /* 부드러운 애니메이션 */
 }
 
-/* 원형 진행 바 */
 .progressCircle {
   position: relative;
-  width: 60px; /* 외부 원 크기 */
-  height: 60px; 
+  width: 60px; /* 원 그래프 크기 */
+  height: 60px;
   border-radius: 50%;
   background: conic-gradient(
-    #5465ff calc(var(--progress) * 1%), /* 진행도에 따라 채워지는 부분 */
+    #5465ff calc(var(--progress) * 1%),
     #ddd calc(var(--progress) * 1%)
   );
-  margin-left: auto;
-  margin-right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* 중앙에 구멍 뚫기 */
 .progressCircle::before {
   content: "";
   position: absolute;
   width: 40px; /* 구멍 크기 */
   height: 40px;
   border-radius: 50%;
-  background: #262a35; /* 부모 배경색과 동일하게 처리하여 투명처럼 보이게 설정 */
-  z-index: 1; /* 위로 표시 */
+  background: #25272e; /* 부모 배경과 동일 */
 }
 
-/* 중앙 텍스트 */
 .progressText {
   position: absolute;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
-  color: white; /* 텍스트 색상 */
-  z-index: 2; /* 구멍 위에 텍스트 표시 */
-  text-align: center;
+  color: white;
+  z-index: 1; /* 텍스트가 구멍 위에 표시되도록 */
 }
+
 
 
 
