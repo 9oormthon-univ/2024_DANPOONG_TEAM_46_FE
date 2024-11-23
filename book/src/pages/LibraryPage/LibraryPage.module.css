@@ -1,5 +1,5 @@
 .container {
-  height: calc(100vh - 63px); /* 네비게이션 높이 제외 */
+  height: calc(100vh - 63px);
   width: 90vw;
   max-width: 1200px;
   overflow-y: auto;
@@ -72,7 +72,7 @@
 
 .bookList {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   overflow-x: scroll; /* 가로 스크롤 활성화 */
   -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
@@ -83,23 +83,22 @@
 }
 
 .bookCard {
-  width: 150px;
-  flex-shrink: 0;
+  flex: 0 0 calc(60% - 10px); /* 화면의 60% 차지 */
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .bookImage {
   width: 100%;
-  height: 180px;
+  height: 250px; /* 책 이미지 크기 조정 */
   object-fit: cover;
 }
 
 .bookInfo {
   background: #222;
-  padding: 10px;
+  padding: 15px;
   color: white;
 }
 
@@ -113,7 +112,7 @@
 }
 
 .bookTitle {
-  font-size: 16px;
+  font-size: 18px;
   margin: 5px 0;
 }
 
@@ -129,14 +128,13 @@
 }
 
 .moreButton {
-  margin-top: 20px;
   padding: 10px 20px;
   background: #444;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
 }

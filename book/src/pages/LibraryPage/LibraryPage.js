@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../../components/NavigationBar';
-import styles from './LibraryPage.module.css'; // 스타일 가져오기
+import styles from './LibraryPage.module.css';
 
 const LibraryPage = () => {
   const navigate = useNavigate();
@@ -80,8 +80,8 @@ const LibraryPage = () => {
                 </div>
               </div>
             ))}
+            <button className={styles.moreButton}>도서 더보기</button>
           </div>
-          <button className={styles.moreButton}>도서 더보기</button>
         </div>
       </div>
       {/* 네비게이션 바 */}
