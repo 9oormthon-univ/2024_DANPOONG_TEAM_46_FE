@@ -230,6 +230,7 @@
   justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
   flex-wrap: wrap;
   width: 92%;
+
   text-align: center;
   padding: 10px;
   z-index: 2; /* 이미지 위에 표시되도록 설정 */
@@ -239,6 +240,7 @@
     rgba(0, 0, 0, 0)
   ); /* 위로 갈수록 투명해지는 효과 */
   color: #fff; /* 텍스트 색상 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
 }
 
 .bookTag {
@@ -251,7 +253,8 @@
   font-size: 12px;
   margin-bottom: 10px;
   text-align: left; /* 텍스트 왼쪽 정렬 */
-  margin: 0; /* 여백이 있을 경우 제거 */
+  margin: 1; /* 여백이 있을 경우 제거 */
+  margin-left: 5px;
 }
 
 .bookTitle {
