@@ -131,10 +131,13 @@
 }
 
 .bookProgress {
+  display: flex; /* 플렉스박스 활성화 */
+  justify-content: space-between; /* 텍스트를 양 끝으로 배치 */
   font-size: 14px;
   color: #ccc;
   margin-top: 10px;
 }
+
 .moreButton {
   padding: 10px 50px;
   background: transparent; /* 투명한 배경 */
