@@ -16,8 +16,6 @@
   overflow-y: auto; /* 컨텐츠 스크롤 */
 }
 
-
-
 .libraryPage {
   padding: 10px;
   color: #fff;
@@ -49,10 +47,11 @@
   height: 100%; /* 부모 요소 안에서 세로 중앙 정렬 */
 }
 
-.profileImage img {
+.profileImage {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  margin-right: 10px;
 }
 
 .profileName {
@@ -279,7 +278,6 @@
 
 /*-----------------------------    내서재   ------------------------------------*/
 
-
 .tabButtons {
   display: flex;
   justify-content: center;
@@ -332,4 +330,3 @@
   border-radius: 10px;
   object-fit: cover; /* 이미지 비율 유지 */
 }
-

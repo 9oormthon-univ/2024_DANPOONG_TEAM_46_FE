@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './MyLibraryPage.module.css';
-import NavigationBar from '../../components/NavigationBar';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import styles from './MyLibraryPage.module.css'
+import NavigationBar from '../../components/NavigationBar'
 
 const MyLibraryPage = () => {
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('내서재');
+  const navigate = useNavigate()
+  const [activeTab, setActiveTab] = useState('내서재')
 
   const books = [
     {
@@ -22,18 +22,24 @@ const MyLibraryPage = () => {
       total: 500,
       image: '/img/im-book.png',
     },
-  ];
+  ]
 
   const galleryData = [
     {
       date: '2024.11.17',
-      images: ['/img/gallery1.png', '/img/gallery2.png', '/img/gallery3.png', '/img/gallery4.png', '/img/gallery5.png'],
+      images: [
+        '/img/gallery1.png',
+        '/img/gallery2.png',
+        '/img/gallery3.png',
+        '/img/gallery4.png',
+        '/img/gallery5.png',
+      ],
     },
     {
       date: '2024.11.16',
       images: ['/img/gallery6.png', '/img/gallery7.png'],
     },
-  ];
+  ]
 
   return (
     <div className={styles.container}>
@@ -162,7 +168,7 @@ const MyLibraryPage = () => {
       {/* 네비게이션 바 */}
       <NavigationBar />
     </div>
-  );
-};
+  )
+}
 
-export default MyLibraryPage;
+export default MyLibraryPage
