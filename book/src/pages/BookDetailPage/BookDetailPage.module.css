@@ -1,0 +1,163 @@
+.container {
+    width: 80%; /* 너비 */
+    max-width: 1200px; /* 선택적으로 최대 너비 설정 */
+    overflow-y: auto; /* 스크롤 가능 */
+    margin: 0 auto; /* 좌우 가운데 정렬 */
+    display: flex;
+    flex-direction: column;
+    -ms-overflow-style: none; /* IE, Edge에서 스크롤 바 숨기기 */
+    scrollbar-width: none; /* Firefox에서 스크롤 바 숨기기 */
+  }
+  
+  .backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .bookImageWrapper {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .bookImage {
+    margin-top: 10vh;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .bookInfo {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .bookTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+  }
+  
+  .bookTag {
+    background: #5465ff;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .author {
+    font-size: 16px;
+    color: #aaa;
+    text-align: left;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid #2f374c;
+    margin: 20px 0;
+  }
+  
+  .progressSection {
+    text-align: left;
+  }
+  
+  .progressRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .progressBar {
+    background: #2f374c;
+    height: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+  }
+  
+  .progressFill {
+    background: #5465ff;
+    height: 100%;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .moreButton {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .readingImages {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  .readingImage {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .addButton {
+    width: 100%;
+    padding: 10px;
+    background: #222631;
+    color: #AFB7FF;
+    border: none;
+    height: 56px;
+    border-radius: 16px;
+    cursor: pointer;
+  }
+  
+  .statusButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .statusButton {
+    padding: 10px;
+    height: 56px;
+    background: #2f374c;
+    color: white;
+    border-radius: 16px;
+    border: 1px solid #2f374c;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    margin:2px ;
+  }
+  
+  .statusButton i {
+    font-size: 16px;
+  }
+  
+  .activeStatus {
+    background: #5465ff;
+    border: 1px solid #5465ff;
+  }
+  
