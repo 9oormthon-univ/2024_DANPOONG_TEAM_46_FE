@@ -44,7 +44,7 @@ const LibraryPage = () => {
               />
             </div>
             <div className={styles.profileBox}>
-              <h1 className={styles.profileName}>단풍톤님의 서재</h1>
+              <h1 className={styles.profileName}>단풍톤님 반가워요!</h1>
               <p className={styles.starName}>사자자리</p>
             </div>
           </div>
@@ -58,7 +58,7 @@ const LibraryPage = () => {
 
         {/* 읽고 있는 도서 */}
         <div className={styles.readingSection}>
-          <h2 className={styles.sectionTitle}>읽고 있는 도서</h2>
+          <h2 className={styles.sectionTitle}> 읽고 있는 도서</h2>
           <div className={styles.bookList}>
             {books.map((book, index) => (
               <div key={index} className={styles.bookCard}>
@@ -80,7 +80,11 @@ const LibraryPage = () => {
                 </div>
               </div>
             ))}
-            <button className={styles.moreButton}>도서 더보기</button>
+            <button className={styles.moreButton}>
+              <i className={`${styles.icPlus} ic-plus`}></i>
+              <span>도서 추가</span>
+            </button>
+
           </div>
         </div>
       </div>
