@@ -8,8 +8,7 @@ const StarPage = () => {
   const [drawCount, setDrawCount] = useState(5); // 뽑기 가능 횟수
   const [selectedStar, setSelectedStar] = useState(null); // 뽑힌 별자리
   const [showModal, setShowModal] = useState(false); // 모달 표시 여부
-
-  const starSigns = [
+  const [starSigns, setStarSigns] = useState([
     { name: "사자자리", img: "/img/star/lion.png", active: true },
     { name: "전갈자리", img: "/img/star/scorpion.png", active: true },
     { name: "처녀자리", img: "/img/star/girl.png", active: true },
@@ -22,15 +21,27 @@ const StarPage = () => {
     { name: "천칭자리", img: "/img/star/weight.png", active: false },
     { name: "염소자리", img: "/img/star/goat.png", active: false },
     { name: "궁수자리", img: "/img/star/bow.png", active: false },
-  ];
+  ]);
 
   // 랜덤 별자리 뽑기
   const drawStar = () => {
     if (drawCount > 0) {
       const inactiveStars = starSigns.filter((star) => !star.active);
+      if (inactiveStars.length === 0) {
+        alert("모든 별자리를 이미 활성화했습니다!");
+        return;
+      }
       const randomStar =
         inactiveStars[Math.floor(Math.random() * inactiveStars.length)];
       setSelectedStar(randomStar);
+
+      // 별자리 활성화
+      setStarSigns((prevStarSigns) =>
+        prevStarSigns.map((star) =>
+          star.name === randomStar.name ? { ...star, active: true } : star
+        )
+      );
+
       setDrawCount(drawCount - 1);
       setShowModal(true);
     }
