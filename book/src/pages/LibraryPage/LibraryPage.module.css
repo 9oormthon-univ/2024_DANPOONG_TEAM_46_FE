@@ -1,22 +1,17 @@
 .container {
   height: calc(100vh - 63px); /* 네비게이션 높이 제외 */
-  height: 90vh;
-  width: 80vw;
-  max-width: 1200px; /* 선택적으로 최대 너비 설정 */
-  overflow-y: auto; /* 스크롤 가능 */
-  margin: 0 auto; /* 좌우 가운데 정렬 */
+  width: 90vw;
+  max-width: 1200px;
+  overflow-y: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  -ms-overflow-style: none; /* IE, Edge에서 스크롤 바 숨기기 */
-  scrollbar-width: none; /* Firefox에서 스크롤 바 숨기기 */
 }
 
-.libraryPage {
-  padding: 10px;
-  color: #fff;
-  background-size: cover;
-  height: 90vh;
-  width: 90vw;
+.contentWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .profileHeader {
@@ -25,10 +20,8 @@
   align-items: center;
   margin-top: 6vh;
   margin-bottom: 3vh;
-  position: relative; /* 필요하면 fixed로 수정 */
-  z-index: 10; /* 다른 요소보다 위에 표시되도록 설정 */
+  position: relative;
 }
-
 
 .profileInfo {
   display: flex;
@@ -36,20 +29,18 @@
 }
 
 .profileBox {
-    display: flex; /* Flexbox 활성화 */
-    flex-direction: column; /* 세로로 정렬 */
-    align-items: flex-start; /* 가로축 왼쪽 정렬 */
-    justify-content: center; /* 세로축 중앙 정렬 */
-    height: 100%; /* 부모 요소 안에서 세로 중앙 정렬 */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
 
-.profileImage {
+.profileImage img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
 }
-
 
 .profileName {
   font-size: 20px;
@@ -60,5 +51,92 @@
 .starName {
   font-size: 14px;
   color: #ccc;
-  margin-top: 0px;
+}
+
+.mainStar {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+
+.readingSection {
+  margin-top: 30px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.bookList {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll; /* 가로 스크롤 활성화 */
+  -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+  scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+}
+
+.bookList::-webkit-scrollbar {
+  display: none; /* Chrome에서 스크롤바 숨기기 */
+}
+
+.bookCard {
+  width: 150px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bookImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.bookInfo {
+  background: #222;
+  padding: 10px;
+  color: white;
+}
+
+.bookTag {
+  display: inline-block;
+  background: #5465ff;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 2px 5px;
+}
+
+.bookTitle {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.bookAuthor {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.bookProgress {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.moreButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
