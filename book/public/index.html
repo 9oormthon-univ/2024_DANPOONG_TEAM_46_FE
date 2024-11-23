@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book두칠성</title>
     <link rel="stylesheet" href="../src/style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <style>
       body,
       html {
-        padding-bottom: 63px; /* 네비게이션 바 높이만큼 여백 추가*/
-        background-image: url('/img/im-BG.png'); /* public 폴더 절대 경로 */
-        background-size: cover; /* 화면을 꽉 채우도록 설정 */
-        background-repeat: no-repeat; /* 이미지 반복 방지 */
-        background-position: center; /* 중앙 정렬 */
-        background-position: top; /* 이미지를 위쪽에서 시작하도록 설정 */
-        height: calc(100vh - 63px); /* 네비게이션 바 높이만큼 제외한 높이 */
-        width: 100%; /* 화면 전체 너비 */
-        display: flex; /* 배치를 위한 flexbox */
-        flex-direction: column; /* 수직 정렬 */
-        align-items: center; /* 수평 가운데 정렬 */
-        justify-content: center; /* 수직 가운데 정렬 */
-        color: #ffffff; /* 기본 텍스트 색상 흰색 */
-        font-family: 'Pretendard', sans-serif; /* 기본 폰트 */
+        padding-bottom: 63px; /* 네비게이션 바 높이만큼 여백 추가 */
+        background: 
+          url('/img/BG.png') top center repeat-y, /* 첫 번째 이미지 */
+          url('/img/BG2.png') bottom center repeat-y; /* 두 번째 이미지 */
+        background-size: 100% auto; /* 이미지의 가로를 화면에 맞추고, 세로는 원본 크기 유지 */
+        height: calc(100vh - 63px); /* 네비게이션 바 높이 제외 */
+        width: 100%; /* 전체 너비 */
+        display: flex; /* 레이아웃을 위한 Flexbox */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff; /* 텍스트 색상 */
+        font-family: 'Pretendard', sans-serif; /* 폰트 설정 */
         text-align: center; /* 텍스트 가운데 정렬 */
       }
+
     </style>
     <!-- Pretendard fonts -->
     <script>
