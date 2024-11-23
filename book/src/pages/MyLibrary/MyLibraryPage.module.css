@@ -1,3 +1,23 @@
+.container {
+  height: calc(100vh - 63px); /* 네비게이션 높이 제외 */
+  width: 80%; /* 너비 */
+  max-width: 1200px; /* 선택적으로 최대 너비 설정 */
+  overflow-y: auto; /* 스크롤 가능 */
+  margin: 0 auto; /* 좌우 가운데 정렬 */
+  display: flex;
+  flex-direction: column;
+  -ms-overflow-style: none; /* IE, Edge에서 스크롤 바 숨기기 */
+  scrollbar-width: none; /* Firefox에서 스크롤 바 숨기기 */
+}
+
+.content {
+  flex: 1; /* 컨텐츠 영역을 꽉 채움 */
+  padding: 10px;
+  overflow-y: auto; /* 컨텐츠 스크롤 */
+}
+
+
+
 .libraryPage {
   padding: 10px;
   color: #fff;
@@ -84,7 +104,6 @@
   display: flex;
   justify-content: space-evenly; /* 항목 간 동일한 간격 */
   margin-bottom: 20px;
-  
 }
 
 .statItem {
@@ -97,10 +116,8 @@
   display: block; /* 아이콘을 블록 요소로 변환 */
   font-size: 20px; /* 아이콘 크기 조정 */
   margin-bottom: 4px; /* 아이콘과 텍스트 사이 간격 */
-  color: #8B929A; /* 아이콘 색상 회색 */
-  
+  color: #8b929a; /* 아이콘 색상 회색 */
 }
-
 
 .statItem:not(:last-child)::after {
   content: '';
@@ -109,15 +126,13 @@
   right: 0;
   width: 1px; /* 선분 두께 */
   height: 100%;
-  background-color: #2F374C; /* 선분 색상 */
+  background-color: #2f374c; /* 선분 색상 */
 }
-
 
 .statText {
   font-size: 12px;
   margin: 0.1px; /* 텍스트와 숫자 사이 간격 */
-  color: #8B929A; /* 텍스트 색상 회색 */
-  
+  color: #8b929a; /* 텍스트 색상 회색 */
 }
 
 .statValue {
@@ -136,11 +151,11 @@
 .inputWrapper {
   display: flex;
   align-items: center;
-  border: 1px solid #2F374C;
+  border: 1px solid #2f374c;
   border-radius: 30px;
   background-color: #222631;
   padding: 1px;
-  color: #67707B; /* 아이콘 색상 */
+  color: #67707b; /* 아이콘 색상 */
   position: relative; /* 아이콘을 입력창 안에 배치 */
 }
 
@@ -150,8 +165,6 @@
   margin-right: 5px; /* 오른쪽 마진 추가 */
   flex-shrink: 0; /* 아이콘이 줄어들지 않도록 설정 */
 }
-
-
 
 .searchInput {
   flex: 1;
@@ -165,7 +178,6 @@
   color: #fff; /* 텍스트 색상을 흰색으로 설정 */
 }
 
-
 .sortButton {
   background: none;
   color: #fff;
@@ -177,24 +189,21 @@
   align-items: center;
 }
 
-
 .bookList {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   height: 30vh;
-  width: 100%;  
+  width: 100%;
   justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
-  
 }
 
 .bookCard {
   position: relative; /* 자식 요소의 절대 위치 지정 가능 */
   border-radius: 10px;
   overflow: hidden;
-  width: calc(50% - 10px);  
+  width: calc(50% - 10px);
   justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
-
 }
 
 .bookCard::before {
@@ -214,10 +223,7 @@
   width: 100%; /* 부모 컨테이너의 너비에 맞춤 */
   object-fit: contain; /* 이미지 비율 유지하면서 짤림 방지 */
   border-radius: 10px; /* 둥근 모서리 유지 */
-  
 }
-
-
 
 .bookInfo {
   position: absolute; /* 부모 요소(bookCard) 위에 겹쳐지도록 설정 */
@@ -228,15 +234,18 @@
   text-align: center;
   padding: 10px;
   z-index: 2; /* 이미지 위에 표시되도록 설정 */
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)); /* 위로 갈수록 투명해지는 효과 */  color: #fff; /* 텍스트 색상 */
-
-  
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0)
+  ); /* 위로 갈수록 투명해지는 효과 */
+  color: #fff; /* 텍스트 색상 */
 }
 
 .bookTag {
   display: block; /* 독립적인 블록 요소 */
   display: inline-block;
-  background: #5465FF;
+  background: #5465ff;
   color: #fff;
   border-radius: 5px;
   padding: 2px 5px;
@@ -267,3 +276,60 @@
   margin-bottom: 1vh;
   padding: 1vh;
 }
+
+/*-----------------------------    내서재   ------------------------------------*/
+
+
+.tabButtons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.tabButton {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  color: #aaa;
+  cursor: pointer;
+  border-bottom: 2px solid #444; /* 기본 회색선 */
+}
+
+.activeTab {
+  color: #fff;
+  border-bottom: 2px solid #fff; /* 활성화된 탭에 흰색선 */
+}
+
+.galleryList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.galleryEntry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.galleryDate {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.galleryImages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.galleryImage {
+  width: 100%;
+  aspect-ratio: 1; /* 정사각형 */
+  border-radius: 10px;
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+
