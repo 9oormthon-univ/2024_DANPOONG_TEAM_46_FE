@@ -189,6 +189,16 @@ p{
   transition: background 0.3s ease;
 }
 
+/* 클릭 가능한 영역 확장 */
+.confirmButton::before {
+  content: '';
+  position: absolute;
+  top: 40vh; /* 위쪽 클릭 영역 확장 */
+  bottom: -10vh; /* 아래쪽 클릭 영역 확장 */
+  left: -10px; /* 왼쪽 클릭 영역 확장 */
+  right: -10px; /* 오른쪽 클릭 영역 확장 */
+  z-index: -1; /* 가시적인 버튼 뒤로 이동 */
+}
 
 .lottieWrapper {
   position: absolute; /* 애니메이션 위치 설정 */
