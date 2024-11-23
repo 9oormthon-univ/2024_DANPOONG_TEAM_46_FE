@@ -233,7 +233,7 @@ p{
   align-items: center;
   justify-content: space-between; /* 요소 사이 간격 균등 분배 */
   padding: 20px;
-  background: #2f374c;
+
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
