@@ -68,11 +68,14 @@
 .sectionTitle {
   font-size: 18px;
   margin-bottom: 15px;
+  text-align: left; /* 제목 왼쪽 정렬 */
 }
 
 .bookList {
   display: flex;
-  gap: 15px;
+  gap: 4px;
+  height: 30vh;
+  width: 100%;
   overflow-x: scroll; /* 가로 스크롤 활성화 */
   -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
   scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
@@ -83,12 +86,27 @@
 }
 
 .bookCard {
-  flex: 0 0 calc(60% - 10px); /* 화면의 60% 차지 */
+  flex: 0 0 calc(40% - 10px); /* 화면의 60% 차지 */
+  position: relative; /* 자식 요소의 절대 위치 지정 가능 */
+
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 16px;
   overflow: hidden;
 }
+
+.bookCard::before {
+    content: ''; /* 빈 가상 요소 추가 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* 이미지를 전체에 맞춤 */
+    background-position: center; /* 이미지 중앙 정렬 */
+    filter: blur(5px); /* 블러 효과 추가 */
+    z-index: 1; /* 다른 요소보다 아래에 표시 */
+  }
 
 .bookImage {
   width: 100%;
@@ -97,9 +115,23 @@
 }
 
 .bookInfo {
-  background: #222;
-  padding: 15px;
+    position: absolute; /* 부모 요소(bookCard) 위에 겹쳐지도록 설정 */
+    bottom: 0; /* 카드의 아래쪽에 위치 */
+    justify-content: center; /* 리스트를 부모 안에서 중앙 정렬 */
+    flex-wrap: wrap;
+    width: 92%;
+    text-align: center;
+    padding: 10px;
+    z-index: 2; /* 이미지 위에 표시되도록 설정 */
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0)
+      ); /* 위로 갈수록 투명해지는 효과 */
   color: white;
+  text-align: left; /* 북클럽 태그, 제목, 저자 왼쪽 정렬 */
+  
 }
 
 .bookTag {
@@ -113,12 +145,16 @@
 
 .bookTitle {
   font-size: 18px;
-  margin: 5px 0;
+  margin: 15px 0;
+  margin-bottom: 5px;
+
 }
 
 .bookAuthor {
   font-size: 14px;
   color: #aaa;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .bookProgress {
