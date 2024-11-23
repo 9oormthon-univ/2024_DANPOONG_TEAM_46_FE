@@ -171,18 +171,7 @@ p{
   z-index: 20;
 }
 
-.modalContent {
-  position: relative; /* Lottie와 이미지의 위치 조정을 위한 상대 위치 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 400px;
-  overflow: hidden;
-}
+
 
 .confirmButton {
   position: absolute; /* 절대 위치 지정 */
@@ -222,14 +211,34 @@ p{
 
 
 .confirmButton {
-  padding: 10px 20px;
+  width: 80%; /* 가로로 길게 설정 */
+  padding: 15px; /* 세로로 짧게 설정 */
+  margin-top: 20px; /* 텍스트 아래 간격 */
   background: #5465ff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+  
 }
 
 .confirmButton:hover {
   background: #4151c7;
 }
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #2f374c;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  bottom: 0;
+}
+

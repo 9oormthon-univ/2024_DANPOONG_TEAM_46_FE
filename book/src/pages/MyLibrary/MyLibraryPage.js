@@ -9,6 +9,7 @@ const MyLibraryPage = () => {
 
   const books = [
     {
+      id: 1, // 고유 ID 추가
       title: '채식주의자',
       author: '한강',
       current: 240,
@@ -16,46 +17,66 @@ const MyLibraryPage = () => {
       image: '/img/im-book.png',
     },
     {
+      id: 2,
       title: '급류',
       author: '정대건',
       current: 300,
       total: 500,
+      image: '/img/im-book2.png',
+    },
+    {
+      id: 3,
+      title: '아몬드',
+      author: '손원평',
+      current: 120,
+      total: 200,
+      image: '/img/im-book3.png',
+    },    {
+      id: 1, // 고유 ID 추가
+      title: '채식주의자',
+      author: '한강',
+      current: 240,
+      total: 340,
       image: '/img/im-book.png',
     },
     {
+      id: 2,
       title: '급류',
       author: '정대건',
       current: 300,
       total: 500,
+      image: '/img/im-book2.png',
+    },
+    {
+      id: 3,
+      title: '아몬드',
+      author: '손원평',
+      current: 120,
+      total: 200,
+      image: '/img/im-book3.png',
+    },    {
+      id: 1, // 고유 ID 추가
+      title: '채식주의자',
+      author: '한강',
+      current: 240,
+      total: 340,
       image: '/img/im-book.png',
     },
     {
+      id: 2,
       title: '급류',
       author: '정대건',
       current: 300,
       total: 500,
-      image: '/img/im-book.png',
+      image: '/img/im-book2.png',
     },
     {
-      title: '급류',
-      author: '정대건',
-      current: 300,
-      total: 500,
-      image: '/img/im-book.png',
-    },
-    {
-      title: '급류',
-      author: '정대건',
-      current: 300,
-      total: 500,
-      image: '/img/im-book.png',
-    },
-    {
-      title: '급류',
-      author: '정대건',
-      current: 300,
-      total: 500,
-      image: '/img/im-book.png',
+      id: 3,
+      title: '아몬드',
+      author: '손원평',
+      current: 120,
+      total: 200,
+      image: '/img/im-book3.png',
     },
     
   ]

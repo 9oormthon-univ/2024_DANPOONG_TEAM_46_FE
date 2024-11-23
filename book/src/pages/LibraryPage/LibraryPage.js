@@ -21,15 +21,15 @@ const LibraryPage = () => {
       author: '정대건',
       current: 300,
       total: 500,
-      image: '/img/im-book.png',
+      image: '/img/im-book2.png',
     },
     {
       id: 3,
-      title: '어떤 책',
-      author: '작가 이름',
+      title: '아몬드',
+      author: '손원평',
       current: 120,
       total: 200,
-      image: '/img/im-book.png',
+      image: '/img/im-book3.png',
     },
   ];
 

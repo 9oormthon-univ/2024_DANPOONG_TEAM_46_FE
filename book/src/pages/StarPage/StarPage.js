@@ -96,15 +96,9 @@ const StarPage = () => {
       </div>
 
       {/* 랜덤 별자리 모달 */}
-      {/* 랜덤 별자리 모달 */}
       {showModal && selectedStar && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
-            {/* 확인 버튼을 최상위로 배치 */}
-            <button className={styles.confirmButton} onClick={closeModal}>
-              확인
-            </button>
-
             {/* Lottie 애니메이션 */}
             <div className={styles.lottieWrapper}>
               <Lottie
@@ -112,8 +106,8 @@ const StarPage = () => {
                 animationData={animationData}
                 play
                 style={{
-                  width: "400px",
-                  height: "400px",
+                  width: "250px",
+                  height: "250px",
                 }}
               />
             </div>
@@ -125,14 +119,17 @@ const StarPage = () => {
               className={styles.modalImage}
             />
 
+            {/* 축하 메시지 */}
             <h2>{selectedStar.name} 획득을 축하드립니다!</h2>
             <p>{new Date().toLocaleDateString()} 획득</p>
+
+            {/* 확인 버튼 */}
+            <button className={styles.confirmButton} onClick={closeModal}>
+              확인
+            </button>
           </div>
         </div>
       )}
-
-
-
 
       {/* 네비게이션 바 */}
       <NavigationBar />
