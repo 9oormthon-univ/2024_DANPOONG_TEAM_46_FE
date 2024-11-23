@@ -6,6 +6,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .contentWrapper {
@@ -20,7 +21,6 @@
   align-items: center;
   margin-top: 6vh;
   margin-bottom: 3vh;
-  position: relative;
 }
 
 .profileInfo {
@@ -32,25 +32,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 
-.profileImage img {
+.profileImage {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-.profileName {
-  font-size: 20px;
-  margin: 0;
-  margin-top: 15px;
-}
-
-.starName {
-  font-size: 14px;
-  color: #ccc;
 }
 
 .starGrid {
@@ -58,8 +46,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
   padding: 20px;
-  overflow-y: auto;
-  height: 60vh;
 }
 
 .starCard {
@@ -69,19 +55,14 @@
   justify-content: center;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
   text-align: center;
-  transition: opacity 0.3s ease;
 }
 
 .starCard img {
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
-}
-
-.starCard p {
-  margin: 0;
-  font-size: 14px;
 }
 
 .starCard.active {
@@ -92,9 +73,79 @@
   opacity: 0.4;
 }
 
+/* 하단 버튼 고정 */
 .footer {
-  margin: 10px;
+  position: fixed;
+  bottom: 75px; /* 네비게이션 높이 (65px) + 간격 (10px) */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
   text-align: center;
-  font-size: 14px;
-  color: #aaa;
+  z-index: 10;
+}
+
+.drawButton {
+  padding: 10px 20px;
+  background: #5465ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.drawButton:hover {
+  background: #4151c7;
+}
+
+.disabledButton {
+  padding: 10px 20px;
+  background: #888;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.modalContent {
+
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.modalImage {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.confirmButton {
+  padding: 10px 20px;
+  background: #5465ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmButton:hover {
+  background: #4151c7;
 }
